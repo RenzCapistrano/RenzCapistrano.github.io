@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Time</title>
+    <style>
+        /* General Reset and Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: url('https://img.freepik.com/premium-photo/cup-coffee-dark-background-aesthetic-photo-coffee-international-coffee-day_676179-773.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #f19840;
+            text-align: center;
+        }
+
+        header {
+            background-color: rgba(5, 5, 5, 0.7);
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        .search-container {
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .search-bar {
+            width: 80%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #6f4e37;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #5b4636;
+        }
+
+        main {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 20px auto;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            flex: 1;
+        }
+
+        img {
+            max-width: 500px; /* Limit image width */
+            max-height: 325px; /* Limit image height */
+            border: 5px solid #d9ad7c;
+            margin-top: 20px;
+            display: none;
+        }
+
+        footer {
+            background-color: rgba(245, 166, 76, 0.9);
+            padding: 10px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Coffee Time</h1>
+        <p>Discover random coffee images and flavors!</p>
+    </header>
+
+    <div class="search-container">
+        <form id="flavorSearchForm">
+            <input type="text" id="flavorSearchBar" class="search-bar" placeholder="Search for coffee flavors...">
+            <button type="submit" class="search-button">Search</button>
+        </form>
+    </div>
+
+    <main>
+        <div id="flavorDisplay">
+            <p id="flavorMessage"></p>
+            <img id="flavorImage" src="" alt="Coffee Flavor Image">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Coffee Time. Powered by Coffee API.</p>
+    </footer>
+
+    <script>
+        const flavorSearchForm = document.getElementById('flavorSearchForm');
+        const flavorSearchBar = document.getElementById('flavorSearchBar');
+        const flavorMessage = document.getElementById('flavorMessage');
+        const flavorImage = document.getElementById('flavorImage');
+
+        const flavors = {
+            "vanilla": {
+                image: "https://www.acouplecooks.com/wp-content/uploads/2021/11/Vanilla-Latte-001.jpg",
+                description: "A sweet and creamy vanilla coffee experience."
+            },
+            "hazelnut": {
+                image: "https://www.imperialsugar.com/sites/default/files/recipe/Hazelnut-Mocha-Cafe-Latte-Imperial.jpg",
+                description: "Nutty and rich hazelnut coffee to indulge your senses."
+            },
+            "caramel": {
+                image: "https://i.pinimg.com/originals/7f/7c/0a/7f7c0a441577459d9a0a01ee28b59cc5.jpg",
+                description: "A smooth caramel coffee to brighten your day."
+            }
+        };
+
+        flavorSearchForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const query = flavorSearchBar.value.trim().toLowerCase();
+
+            if (!query) {
+                flavorMessage.textContent = 'Please enter a coffee flavor to search!';
+                flavorImage.style.display = 'none';
+                return;
+            }
+
+            const flavor = flavors[query];
+
+            if (flavor) {
+                flavorMessage.textContent = flavor.description;
+                flavorImage.src = flavor.image;
+                flavorImage.style.display = 'block';
+            } else {
+                flavorMessage.textContent = 'Sorry, flavor not found. Try another one!';
+                flavorImage.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

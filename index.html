@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renz Works</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://www.shutterstock.com/image-photo/calm-weather-on-sea-ocean-600nw-2212935531.jpg'); /* Replace with the actual image URL */
+            background-size: cover; /* Cover the entire page */
+            background-position: center; /* Center the image */
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px;
+            background-color: rgba(5, 4, 4, 0.8); /* Semi-transparent blue */
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .works {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .work-item {
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+            border-radius: 10px;
+            margin: 10px;
+            padding: 20px;
+            width: calc(25% - 40px); /* 4 items per row with margin */
+            box-sizing: border-box;
+            transition: transform 0.3s;
+        }
+
+        .work-item:hover {
+            transform: scale(1.05);
+        }
+
+        .work-item img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .work-item {
+                width: calc(50% - 40px); /* 2 items per row on smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .work-item {
+                width: calc(100% - 40px); /* 1 item per row on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Renz Works</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2>My Works</h2>
+        <div class="works">
+            <div class="work-item">
+                <a href="Project 1.html">
+                    <img src="https://via.placeholder.com/300" alt="Project 1 Image">
+                    <h3>Project 1</h3>
+                </a>
+                <p>Description of Project 1.</p>
+            </div>
+            <div class="work-item">
+                <a href="Project 2.html">
+                    <img src="https://via.placeholder.com/300" alt="Project 2 Image">
+                    <h3>Project 2</h3>
+                </a>
+                <p>Description of Project 2.</p>
+            </div>
+            <div class="work-item">
+                <a href="project3.html">
+                    <img src="https://via.placeholder.com/300" alt="Project 3 Image">
+                    <h3>Project 3</h3>
+                </a>
+                <p>Description of Project 3.</p>
+            </div>
+            <div class="work-item">
+                <a href="project4.html">
+                    <img src="https://via.placeholder.com/300" alt="Project 4 Image">
+                    <h3>Project 4</h3>
+                </a>
+                <p>Description of Project 4.</p>
+            </div>
+            <div class="work-item">
+                <a href="project5.html">
+                    <img src="https://via.placeholder.com/300" alt="Project 5 Image">
+                    <h3>Project 5</h3>
+                </a>
+                <p>Description of Project 5.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 My Future Works</p>
+</footer>
+
+</body>
+</html>
